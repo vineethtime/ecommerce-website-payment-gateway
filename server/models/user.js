@@ -20,9 +20,27 @@ const userSchema = new mongoose.Schema(
 
     role: {
         type: String,
-        enum: ["user", "admin"],
+        enum: ["user", "business", "admin"],
         default: "user",
     },
+
+    isVerified: {
+  type: Boolean,
+  default: false,
+},
+
+otp: String,
+
+otpExpiry: Date,
+
+isBanned: {
+  type: Boolean,
+  default: false,
+},
+
+banReason: String,
+
+banExpiry: Date,
 },
 {
     timestamps: true,
